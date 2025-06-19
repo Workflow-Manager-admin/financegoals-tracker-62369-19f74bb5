@@ -46,3 +46,23 @@ cached modules 2.78 MiB [cached] 631 modules
 runtime modules 27.5 KiB 14 modules
 ./src/GoogleAuthProvider.js 3.03 KiB [built] [code generated]
 webpack 5.99.9 compiled successfully in 202 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 3.07 MiB
+  asset bundle.js 3.06 MiB [emitted] (name: main)
+  asset main.011e39678d5d13c5d711.hot-update.js 6.22 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.011e39678d5d13c5d711.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 3.07 MiB = bundle.js 3.06 MiB main.011e39678d5d13c5d711.hot-update.js 6.22 KiB
+cached modules 2.78 MiB [cached] 631 modules
+runtime modules 27.5 KiB 14 modules
+./src/GoogleAuthProvider.js 4.05 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 148 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 3.06 MiB
+  asset bundle.js 3.06 MiB [emitted] (name: main)
+  asset main.87eecf9eee91a9c25b47.hot-update.js 3.56 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.87eecf9eee91a9c25b47.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 3.06 MiB = bundle.js 3.06 MiB main.87eecf9eee91a9c25b47.hot-update.js 3.56 KiB
+cached modules 2.79 MiB [cached] 631 modules
+runtime modules 27.5 KiB 14 modules
+./src/googleCalendar.js 1.92 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 106 ms

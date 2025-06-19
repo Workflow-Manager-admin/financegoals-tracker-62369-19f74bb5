@@ -1,9 +1,30 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 const CLIENT_ID = "533987858905-v7lj69i6ctto8jioq7omiami9ks4nptb.apps.googleusercontent.com";
-// TODO: Review this CLIENT_ID for match with the Google Cloud Console configuration; see guidance below.
-const SCOPES = "https://www.googleapis.com/auth/calendar.events https://www.googleapis.com/auth/userinfo.profile openid email";
+// NOTE: Ensure this CLIENT_ID matches exactly with the one configured in your Google Cloud Console > Credentials.
+// Typos or use of wrong OAuth client will cause sign-in/auth errors.
+// If you update this ID, update the Google Console (Web client) and check restrictions/redirect URIs match frontend deployment.
+
+const SCOPES = [
+  // calendar.events: Add/view events in Google Calendar
+  "https://www.googleapis.com/auth/calendar.events",
+  // userinfo.profile, openid, email: Standard user identity info
+  "https://www.googleapis.com/auth/userinfo.profile",
+  "openid",
+  "email"
+].join(" ");
+// Checklist:
+//  - Do NOT add nonstandard or excess scopes (e.g., calendar.readonly, drive, etc. are not needed for this app)
+//  - spelling and URLs must be exact as per Google documentation (see https://developers.google.com/identity/protocols/oauth2/scopes).
+//  - see https://developers.google.com/identity/protocols/oauth2/scopes for options.
+
 const API_DISCOVERY = "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest";
+// No hardcoded redirect_uri present in this code. The Google Auth2 client will, by default, use the app's own window.location.origin + "/".
+
+// TIP for deploy: In Google Console, set all of the following as valid redirect URIs as per your use case:
+//   - http://localhost:3000/
+//   - http://localhost:5173/
+//   - https://<your_production_domain>/
 
 /**
  * Loads the Google API client library and initializes it.
