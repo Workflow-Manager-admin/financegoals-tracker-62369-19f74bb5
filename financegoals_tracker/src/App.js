@@ -3,6 +3,7 @@ import "./App.css";
 import PieChartGoalProgress from "./PieChartGoalProgress";
 import { useGoogleAuth } from "./GoogleAuthProvider";
 import { addGoogleCalendarEvent, makeGoalieCalendarEvent } from "./googleCalendar";
+import AddReminderModal from "./AddReminderModal";
 
 // Goal post SVG icon
 const GoalPostIcon = () => (
