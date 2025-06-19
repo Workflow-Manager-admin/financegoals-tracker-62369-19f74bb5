@@ -247,6 +247,7 @@ function App() {
                 onEdit={() => { setEditingGoal(goal); setShowGoalForm(true); }}
                 onDelete={() => handleDeleteGoal(goal.id)}
                 onContribute={handleContribute}
+                savingsMethod={userSavingsPref?.savingMethod || "daily"} // Pass current selection
               />
             ))}
           </div>
@@ -286,25 +287,53 @@ function NotificationCard({ message }) {
 
 // --- Goal Card Component ---
 // PUBLIC_INTERFACE
-function GoalCard({ goal, onEdit, onDelete, onContribute }) {
-  const [smartAmount, setSmartAmount] = useState(() =>
-    smartSuggestedContribution(goal)
-  );
+function GoalCard({ goal, onEdit, onDelete, onContribute, savingsMethod }) {
+  // Compute per-period amount for this goal based on selected method
   const [inputAmt, setInputAmt] = useState("");
 
-  useEffect(() => {
-    setSmartAmount(smartSuggestedContribution(goal));
-  }, [goal]);
+  const today = new Date();
+  const deadline = new Date(goal.deadline);
+
+  // Days/weeks/months left: always at least 1 left (avoids divide by zero)
+  const msInDay = 1000 * 60 * 60 * 24;
+  const daysLeft = Math.max(1, Math.ceil((+deadline - +today) / msInDay));
+  const amountLeft = Math.max(0, Number(goal.targetAmount) - Number(goal.currentAmount));
+
+  function getPeriodAmount(method) {
+    if (!goal || !goal.targetAmount || !goal.deadline) return 0;
+    if (amountLeft === 0) return 0;
+
+    if (method === "daily") {
+      return Math.ceil(amountLeft / daysLeft);
+    } else if (method === "weekly") {
+      const weeksLeft = Math.max(1, Math.ceil(daysLeft / 7));
+      return Math.ceil(amountLeft / weeksLeft);
+    } else if (method === "monthly") {
+      // Months left calculation (partial month counts as a full one!)
+      const tYear = today.getFullYear(), tMonth = today.getMonth(), tDay = today.getDate();
+      const dYear = deadline.getFullYear(), dMonth = deadline.getMonth(), dDay = deadline.getDate();
+      let monthsLeft = (dYear - tYear) * 12 + (dMonth - tMonth);
+      if (dDay - tDay > 0) monthsLeft += 1;
+      monthsLeft = Math.max(1, monthsLeft);
+      return Math.ceil(amountLeft / monthsLeft);
+    } else {
+      // fallback to daily
+      return Math.ceil(amountLeft / daysLeft);
+    }
+  }
+
+  const perPeriod = getPeriodAmount(savingsMethod);
+  let freqLabel = "day";
+  if (savingsMethod === "weekly") freqLabel = "week";
+  else if (savingsMethod === "monthly") freqLabel = "month";
+
+  // For the quick "contribute" button: auto-suggest the period's recommended amount
+  const smartAmount = perPeriod;
 
   const progress = Math.min(
     (Number(goal.currentAmount) / Number(goal.targetAmount)) * 100,
     100
   );
-
-  const today = new Date();
-  const deadline = new Date(goal.deadline);
-  const daysLeft =
-    Math.max(0, Math.ceil((+deadline - +today) / (1000 * 60 * 60 * 24)));
 
   // PUBLIC_INTERFACE
   function handleQuickContribute(e) {
@@ -335,6 +364,10 @@ function GoalCard({ goal, onEdit, onDelete, onContribute }) {
           {daysLeft} {daysLeft===1?"day":"days"} left
         </span>
       </div>
+      {/* Per-period (dynamic) Saving Display */}
+      <div className="fg-smart-suggestion" style={{color:"var(--accent-color)", marginBottom: 4}}>
+        To reach goal: save <b>{formatMoney(perPeriod)}</b> per {freqLabel}
+      </div>
       {/* Contribution Calculator */}
       <form className="fg-contribute-form" onSubmit={handleQuickContribute}>
         <input
@@ -354,9 +387,9 @@ function GoalCard({ goal, onEdit, onDelete, onContribute }) {
           Contribute {inputAmt !== "" ? formatMoney(inputAmt) : formatMoney(smartAmount)}
         </button>
       </form>
-      {/* Smart Suggestion */}
+      {/* Dynamic Smart Suggestion (lets user know period) */}
       <div className="fg-smart-suggestion" style={{color:"var(--accent-color)"}}>
-        Smart Suggestion: Save <b>{formatMoney(smartAmount)}</b> {daysLeft ? "per day" : "today"} to reach your goal.
+        Smart Suggestion: Save <b>{formatMoney(smartAmount)}</b> per {freqLabel} to reach your goal.
       </div>
     </div>
   );
@@ -578,15 +611,6 @@ function SavingsPrefModal({ defaultValues, onSubmit, onClose }) {
 
 // --- UTILITY FUNCTIONS ---
 
-// PUBLIC_INTERFACE
-function smartSuggestedContribution(goal) {
-  if (!goal || !goal.targetAmount || !goal.deadline) return 0;
-  const now = new Date();
-  const deadline = new Date(goal.deadline);
-  const daysLeft = Math.max(1, Math.ceil((+deadline - +now) / (1000 * 60 * 60 * 24)));
-  const amountLeft = Math.max(0, Number(goal.targetAmount) - Number(goal.currentAmount));
-  return Math.ceil(amountLeft / daysLeft);
-}
 function formatMoney(amount) {
   return "₹" + Number(amount).toLocaleString();
 }
