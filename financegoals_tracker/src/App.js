@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import PieChartGoalProgress from "./PieChartGoalProgress";
 
 // Goal post SVG icon
 const GoalPostIcon = () => (
@@ -180,7 +181,7 @@ function App() {
               <NotificationCard key={r.id} message={r.message} />
             ))}
           </div>
-
+          
           {/* Heading */}
           <div className="hero" style={{paddingTop: 104, paddingBottom: 24}}>
             <div className="subtitle" style={{color:"var(--primary-color)", fontWeight:700}}>
@@ -232,6 +233,9 @@ function App() {
               </div>
             )}
           </div>
+
+          {/* PIE CHART: Progress Overview */}
+          <PieChartGoalProgress goals={goals} />
 
           {/* Goal Cards */}
           <div className="fg-goal-list">
