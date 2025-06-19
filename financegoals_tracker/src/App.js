@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import PieChartGoalProgress from "./PieChartGoalProgress";
+import { useGoogleAuth } from "./GoogleAuthProvider";
+import { addGoogleCalendarEvent, makeGoalieCalendarEvent } from "./googleCalendar";
 
 // Goal post SVG icon
 const GoalPostIcon = () => (
@@ -30,6 +32,19 @@ function App() {
   const [reminders, setReminders] = useState([]);
   const [showGoalForm, setShowGoalForm] = useState(false);
   const [editingGoal, setEditingGoal] = useState(null);
+
+  // Google authentication
+  const {
+    isSignedIn,
+    user: googleUser,
+    signIn: handleGoogleSignIn,
+    signOut: handleGoogleSignOut,
+    gapiLoaded
+  } = useGoogleAuth();
+
+  // State for Add Reminder modal
+  const [showAddReminder, setShowAddReminder] = useState(false);
+  const [pendingGoalReminder, setPendingGoalReminder] = useState(null);
 
   // Onboarding savings input modal:
   const [showOnboarding, setShowOnboarding] = useState(() => {
@@ -164,11 +179,25 @@ function App() {
               <GoalPostIcon />
               <span style={{letterSpacing:2,fontWeight:'bold',fontSize:'1.35rem'}}>Goalie</span>
             </div>
-            <button className="btn" style={{
-              background: "var(--accent-color)"
-            }} onClick={() => setShowGoalForm(true)}>
-              + Add Goal
-            </button>
+            <div style={{display:"flex", gap: "7px"}}>
+              {gapiLoaded && (
+                isSignedIn ? (
+                  <button className="btn" style={{marginRight: 8, background: "var(--secondary-color)", color: "var(--darker)"}} onClick={handleGoogleSignOut}>
+                    Sign Out {googleUser && googleUser.getGivenName ? googleUser.getGivenName() : ""}
+                  </button>
+                ) : (
+                  <button className="btn" style={{marginRight: 8}} onClick={handleGoogleSignIn}>
+                    <span role="img" aria-label="google" style={{fontSize: "1.1em",marginRight:2}}>🔗</span>
+                    Google Sign-In
+                  </button>
+                )
+              )}
+              <button className="btn" style={{
+                background: "var(--accent-color)"
+              }} onClick={() => setShowGoalForm(true)}>
+                + Add Goal
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -180,6 +209,15 @@ function App() {
             {reminders.map(r => (
               <NotificationCard key={r.id} message={r.message} />
             ))}
+            {isSignedIn && (
+              <button
+                className="btn"
+                style={{ background: "var(--secondary-color)", color: "#222", marginTop: 4, fontSize: "0.98rem" }}
+                onClick={() => setShowAddReminder(true)}
+              >
+                + Add Google Calendar Reminder
+              </button>
+            )}
           </div>
           
           {/* Heading */}
@@ -274,6 +312,41 @@ function App() {
           defaultValues={userSavingsPref}
           onSubmit={handleOnboardingSubmit}
           onClose={() => showOnboarding ? setShowOnboarding(false) : null}
+        />
+      )}
+
+      {/* Add Google Calendar Reminder Modal */}
+      {showAddReminder && (
+        <AddReminderModal
+          goals={goals}
+          onSubmit={(reminderConfig) => {
+            // Add to Google Calendar
+            if (isSignedIn && gapiLoaded) {
+              const { goalId, date, amount, description } = reminderConfig;
+              const goal = goals.find(g => g.id === goalId);
+              const eventPayload = makeGoalieCalendarEvent({
+                goalName: goal.name,
+                amount,
+                dueDate: date,
+                description,
+              });
+              addGoogleCalendarEvent(
+                eventPayload,
+                () => {
+                  setReminders(r =>
+                    [...r, { id: Date.now(), message: `Added to Google Calendar: ${goal.name}` }].slice(-3)
+                  );
+                },
+                (err) => {
+                  setReminders(r =>
+                    [...r, { id: Date.now(), message: "Error adding to Google Calendar!" }].slice(-3)
+                  );
+                }
+              );
+            }
+            setShowAddReminder(false);
+          }}
+          onClose={() => setShowAddReminder(false)}
         />
       )}
     </div>

@@ -7,158 +7,27 @@
 <i> [webpack-dev-server] On Your Network (IPv4): http://172.17.0.2:3000/
 <i> [webpack-dev-server] Content not from webpack is served from './public' directory
 Injecting EditorRootWrapper import: ../.ve/EditorRootWrapper
-asset bundle.js 1.44 MiB [emitted] (name: main)
+asset bundle.js 2.99 MiB [emitted] (name: main)
 asset index.html 1.98 KiB [emitted]
+orphan modules 366 KiB [orphan] 145 modules
 runtime modules 27.5 KiB 14 modules
-modules by path ./node_modules/ 1.24 MiB 31 modules
-modules by path ./src/ 48.6 KiB
+modules by path ./node_modules/ 2.3 MiB 470 modules
+modules by path ./src/ 55.8 KiB
   modules by path ./src/*.css 15.2 KiB 4 modules
-  modules by path ./src/*.js 33.3 KiB
+  modules by path ./src/*.js 40.6 KiB
     ./src/index.js 530 bytes [built] [code generated]
-    ./src/App.js 32.8 KiB [built] [code generated]
+    + 2 modules
 modules by path ./.ve/ 15.1 KiB
   modules by path ./.ve/*.js 10.6 KiB 2 modules
   modules by path ./.ve/*.css 2.93 KiB
     ./.ve/EditorOverlay.css 2.25 KiB [built] [code generated]
     ./node_modules/css-loader/dist/cjs.js!./.ve/EditorOverlay.css 697 bytes [built] [code generated]
   ./.ve/EditorOverlay.jsx 1.58 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 1276 ms
+webpack 5.99.9 compiled successfully in 2399 ms
 Injecting EditorRootWrapper import: ../.ve/EditorRootWrapper
-assets by status 1.44 MiB [cached] 1 asset
+assets by status 2.99 MiB [cached] 1 asset
 asset index.html 1.98 KiB [emitted]
-cached modules 1.26 MiB (javascript) 27.5 KiB (runtime) [cached] 51 modules
-javascript modules 45.5 KiB
-  modules by path ./.ve/ 12.2 KiB
-    ./.ve/EditorRootWrapper.js 2.68 KiB [built]
-    ./.ve/EditorOverlay.jsx 1.58 KiB [built]
-    ./.ve/SidePanel.js 7.93 KiB [built]
-  modules by path ./src/*.js 33.3 KiB
-    ./src/index.js 530 bytes [built]
-    ./src/App.js 32.8 KiB [built]
-webpack 5.99.9 compiled successfully in 307 ms
-assets by status 1.98 KiB [cached] 1 asset
-assets by path *.js 1.5 MiB
-  asset bundle.js 1.45 MiB [emitted] (name: main)
-  asset main.bbc29e9f4a56eb92238c.hot-update.js 52.9 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.bbc29e9f4a56eb92238c.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.5 MiB = bundle.js 1.45 MiB main.bbc29e9f4a56eb92238c.hot-update.js 52.9 KiB
-cached modules 1.27 MiB [cached] 41 modules
-runtime modules 27.5 KiB 14 modules
-javascript modules 40.1 KiB
-  ./src/App.js 33 KiB [built] [code generated]
-  ./src/PieChartGoalProgress.js 7.07 KiB [built] [code generated]
-
-ERROR in ./src/PieChartGoalProgress.js 2:0-77
-Module not found: Error: Can't resolve 'recharts' in '/home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src'
-resolve 'recharts' in '/home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src'
-  Parsed request is a module
-  using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./src)
-    Field 'browser' doesn't contain a valid alias configuration
-    resolve as module
-      /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src/node_modules doesn't exist or is not a directory
-      looking for modules in /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules
-        single file module
-          using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./node_modules/recharts)
-            no extension
-              Field 'browser' doesn't contain a valid alias configuration
-              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/recharts doesn't exist
-            .js
-              Field 'browser' doesn't contain a valid alias configuration
-              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/recharts.js doesn't exist
-            .jsx
-              Field 'browser' doesn't contain a valid alias configuration
-              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/recharts.jsx doesn't exist
-        /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/recharts doesn't exist
-      /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/node_modules doesn't exist or is not a directory
-      /home/kavia/workspace/code-generation/node_modules doesn't exist or is not a directory
-      /home/kavia/workspace/node_modules doesn't exist or is not a directory
-      /home/kavia/node_modules doesn't exist or is not a directory
-      /home/node_modules doesn't exist or is not a directory
-      /node_modules doesn't exist or is not a directory
- @ ./src/App.js 3:0-58 366:30-50
- @ ./src/index.js 5:0-24 11:32-35
-
-webpack 5.99.9 compiled with 1 error in 145 ms
-assets by status 1.45 MiB [cached] 2 assets
-cached modules 1.31 MiB (javascript) 27.5 KiB (runtime) [cached] 57 modules
-
-ERROR in ./src/PieChartGoalProgress.js 2:0-77
-Module not found: Error: Can't resolve 'recharts' in '/home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src'
-resolve 'recharts' in '/home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src'
-  Parsed request is a module
-  using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./src)
-    Field 'browser' doesn't contain a valid alias configuration
-    resolve as module
-      /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src/node_modules doesn't exist or is not a directory
-      looking for modules in /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules
-        single file module
-          using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./node_modules/recharts)
-            no extension
-              Field 'browser' doesn't contain a valid alias configuration
-              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/recharts is not a file
-            .js
-              Field 'browser' doesn't contain a valid alias configuration
-              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/recharts.js doesn't exist
-            .jsx
-              Field 'browser' doesn't contain a valid alias configuration
-              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/recharts.jsx doesn't exist
-        existing directory /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/recharts
-          using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./node_modules/recharts)
-            using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./node_modules/recharts)
-              no extension
-                Field 'browser' doesn't contain a valid alias configuration
-                /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/recharts is not a file
-              .js
-                Field 'browser' doesn't contain a valid alias configuration
-                /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/recharts.js doesn't exist
-              .jsx
-                Field 'browser' doesn't contain a valid alias configuration
-                /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/recharts.jsx doesn't exist
-              as directory
-                existing directory /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/recharts
-                  using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./node_modules/recharts)
-                    using path: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/recharts/index
-                      using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./node_modules/recharts/index)
-                        no extension
-                          Field 'browser' doesn't contain a valid alias configuration
-                          /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/recharts/index doesn't exist
-                        .js
-                          Field 'browser' doesn't contain a valid alias configuration
-                          /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/recharts/index.js doesn't exist
-                        .jsx
-                          Field 'browser' doesn't contain a valid alias configuration
-                          /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/recharts/index.jsx doesn't exist
-      /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/node_modules doesn't exist or is not a directory
-      /home/kavia/workspace/code-generation/node_modules doesn't exist or is not a directory
-      /home/kavia/workspace/node_modules doesn't exist or is not a directory
-      /home/kavia/node_modules doesn't exist or is not a directory
-      /home/node_modules doesn't exist or is not a directory
-      /node_modules doesn't exist or is not a directory
- @ ./src/App.js 3:0-58 366:30-50
- @ ./src/index.js 5:0-24 11:32-35
-
-webpack 5.99.9 compiled with 1 error in 24 ms
-assets by status 1.98 KiB [cached] 1 asset
-assets by path *.js 4.54 MiB
-  asset bundle.js 2.99 MiB [emitted] (name: main)
-  asset main.62972d85623cb469f1fa.hot-update.js 1.55 MiB [emitted] [immutable] [hmr] (name: main)
-asset main.62972d85623cb469f1fa.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 4.54 MiB = bundle.js 2.99 MiB main.62972d85623cb469f1fa.hot-update.js 1.55 MiB
-orphan modules 366 KiB [orphan] 145 modules
-cached modules 1.3 MiB [cached] 42 modules
-runtime modules 27.5 KiB 14 modules
-built modules 1.06 MiB [built] 439 modules
-./src/PieChartGoalProgress.js 7.07 KiB [code generated]
-webpack 5.99.9 compiled successfully in 1184 ms
-Injecting EditorRootWrapper import: ../.ve/EditorRootWrapper
-assets by path *.js 2.99 MiB
-  asset bundle.js 2.99 MiB [emitted] (name: main)
-  asset main.75375f79aadbc4495525.hot-update.js 854 bytes [emitted] [immutable] [hmr] (name: main)
-asset index.html 1.98 KiB [emitted]
-asset main.75375f79aadbc4495525.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 2.99 MiB = bundle.js 2.99 MiB main.75375f79aadbc4495525.hot-update.js 854 bytes
-cached modules 2.67 MiB [cached] 621 modules
-runtime modules 27.5 KiB 14 modules
+cached modules 2.67 MiB (javascript) 27.5 KiB (runtime) [cached] 635 modules
 javascript modules 52.8 KiB
   modules by path ./src/*.js 40.6 KiB
     ./src/index.js 530 bytes [built]
@@ -168,4 +37,321 @@ javascript modules 52.8 KiB
     ./.ve/EditorRootWrapper.js 2.68 KiB [built]
     ./.ve/EditorOverlay.jsx 1.58 KiB [built]
     ./.ve/SidePanel.js 7.93 KiB [built]
-webpack 5.99.9 compiled successfully in 230 ms
+webpack 5.99.9 compiled successfully in 243 ms
+Injecting EditorRootWrapper import: ../.ve/EditorRootWrapper
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 3 MiB
+  asset bundle.js 2.99 MiB [emitted] (name: main)
+  asset main.f2339fc5ec3ae5e62dc7.hot-update.js 7.35 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.f2339fc5ec3ae5e62dc7.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 3 MiB = bundle.js 2.99 MiB main.f2339fc5ec3ae5e62dc7.hot-update.js 7.35 KiB
+cached modules 2.72 MiB [cached] 626 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 3.61 KiB
+  ./src/index.js 702 bytes [built] [code generated]
+  ./src/GoogleAuthProvider.js 2.92 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 157 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 3.04 MiB
+  asset bundle.js 2.99 MiB [emitted] (name: main)
+  asset main.dc2c595922bb27ac338f.hot-update.js 45.7 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.dc2c595922bb27ac338f.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 3.04 MiB = bundle.js 2.99 MiB main.dc2c595922bb27ac338f.hot-update.js 45.7 KiB
+cached modules 2.7 MiB [cached] 627 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 34.8 KiB
+  ./src/App.js 33.1 KiB [built] [code generated]
+  ./src/googleCalendar.js 1.7 KiB [built] [code generated]
+
+ERROR in ./src/googleCalendar.js 1:0-35
+Module not found: Error: Can't resolve 'gapi-script' in '/home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src'
+resolve 'gapi-script' in '/home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src'
+  Parsed request is a module
+  using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    resolve as module
+      /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src/node_modules doesn't exist or is not a directory
+      looking for modules in /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules
+        single file module
+          using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./node_modules/gapi-script)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script.js doesn't exist
+            .jsx
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script.jsx doesn't exist
+        /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script doesn't exist
+      /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/code-generation/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/node_modules doesn't exist or is not a directory
+      /home/kavia/node_modules doesn't exist or is not a directory
+      /home/node_modules doesn't exist or is not a directory
+      /node_modules doesn't exist or is not a directory
+ @ ./src/App.js 5:0-83
+ @ ./src/index.js 5:0-24 14:34-37
+
+webpack 5.99.9 compiled with 1 error in 219 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 3.04 MiB
+  asset bundle.js 3 MiB [emitted] (name: main)
+  asset main.66bc00771af099002f1d.hot-update.js 43.7 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.66bc00771af099002f1d.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 3.04 MiB = bundle.js 3 MiB main.66bc00771af099002f1d.hot-update.js 43.7 KiB
+cached modules 2.7 MiB [cached] 628 modules
+runtime modules 27.5 KiB 14 modules
+./src/App.js 33.5 KiB [built] [code generated]
+
+ERROR in ./src/googleCalendar.js 1:0-35
+Module not found: Error: Can't resolve 'gapi-script' in '/home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src'
+resolve 'gapi-script' in '/home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src'
+  Parsed request is a module
+  using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    resolve as module
+      /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src/node_modules doesn't exist or is not a directory
+      looking for modules in /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules
+        single file module
+          using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./node_modules/gapi-script)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script.js doesn't exist
+            .jsx
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script.jsx doesn't exist
+        /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script doesn't exist
+      /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/code-generation/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/node_modules doesn't exist or is not a directory
+      /home/kavia/node_modules doesn't exist or is not a directory
+      /home/node_modules doesn't exist or is not a directory
+      /node_modules doesn't exist or is not a directory
+ @ ./src/App.js 5:0-83
+ @ ./src/index.js 5:0-24 14:34-37
+
+webpack 5.99.9 compiled with 1 error in 150 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 3.04 MiB
+  asset bundle.js 3 MiB [emitted] (name: main)
+  asset main.f62831eb3fb0ee4fb15c.hot-update.js 45.2 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.f62831eb3fb0ee4fb15c.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 3.04 MiB = bundle.js 3 MiB main.f62831eb3fb0ee4fb15c.hot-update.js 45.2 KiB
+cached modules 2.7 MiB [cached] 628 modules
+runtime modules 27.5 KiB 14 modules
+./src/App.js 34.8 KiB [built] [code generated]
+
+ERROR in ./src/googleCalendar.js 1:0-35
+Module not found: Error: Can't resolve 'gapi-script' in '/home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src'
+resolve 'gapi-script' in '/home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src'
+  Parsed request is a module
+  using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    resolve as module
+      /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src/node_modules doesn't exist or is not a directory
+      looking for modules in /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules
+        single file module
+          using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./node_modules/gapi-script)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script.js doesn't exist
+            .jsx
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script.jsx doesn't exist
+        /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script doesn't exist
+      /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/code-generation/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/node_modules doesn't exist or is not a directory
+      /home/kavia/node_modules doesn't exist or is not a directory
+      /home/node_modules doesn't exist or is not a directory
+      /node_modules doesn't exist or is not a directory
+ @ ./src/App.js 5:0-83
+ @ ./src/index.js 5:0-24 14:34-37
+
+webpack 5.99.9 compiled with 1 error in 162 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 3.04 MiB
+  asset bundle.js 3 MiB [emitted] (name: main)
+  asset main.b118e782374ad434bf7c.hot-update.js 45.7 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.b118e782374ad434bf7c.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 3.04 MiB = bundle.js 3 MiB main.b118e782374ad434bf7c.hot-update.js 45.7 KiB
+cached modules 2.7 MiB [cached] 628 modules
+runtime modules 27.5 KiB 14 modules
+./src/App.js 35.2 KiB [built] [code generated]
+
+ERROR in ./src/googleCalendar.js 1:0-35
+Module not found: Error: Can't resolve 'gapi-script' in '/home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src'
+resolve 'gapi-script' in '/home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src'
+  Parsed request is a module
+  using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    resolve as module
+      /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src/node_modules doesn't exist or is not a directory
+      looking for modules in /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules
+        single file module
+          using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./node_modules/gapi-script)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script.js doesn't exist
+            .jsx
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script.jsx doesn't exist
+        /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script doesn't exist
+      /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/code-generation/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/node_modules doesn't exist or is not a directory
+      /home/kavia/node_modules doesn't exist or is not a directory
+      /home/node_modules doesn't exist or is not a directory
+      /node_modules doesn't exist or is not a directory
+ @ ./src/App.js 5:0-83
+ @ ./src/index.js 5:0-24 14:34-37
+
+webpack 5.99.9 compiled with 1 error in 157 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 3.04 MiB
+  asset bundle.js 3 MiB [emitted] (name: main)
+  asset main.9e1c9eedeb08235a3603.hot-update.js 47 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.9e1c9eedeb08235a3603.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 3.04 MiB = bundle.js 3 MiB main.9e1c9eedeb08235a3603.hot-update.js 47 KiB
+cached modules 2.7 MiB [cached] 628 modules
+runtime modules 27.5 KiB 14 modules
+./src/App.js 36.3 KiB [built] [code generated]
+
+ERROR in ./src/googleCalendar.js 1:0-35
+Module not found: Error: Can't resolve 'gapi-script' in '/home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src'
+resolve 'gapi-script' in '/home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src'
+  Parsed request is a module
+  using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    resolve as module
+      /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src/node_modules doesn't exist or is not a directory
+      looking for modules in /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules
+        single file module
+          using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./node_modules/gapi-script)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script.js doesn't exist
+            .jsx
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script.jsx doesn't exist
+        /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script doesn't exist
+      /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/code-generation/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/node_modules doesn't exist or is not a directory
+      /home/kavia/node_modules doesn't exist or is not a directory
+      /home/node_modules doesn't exist or is not a directory
+      /node_modules doesn't exist or is not a directory
+ @ ./src/App.js 5:0-83 479:31-54 485:10-32
+ @ ./src/index.js 5:0-24 14:34-37
+
+webpack 5.99.9 compiled with 1 error in 175 ms
+assets by status 3 MiB [cached] 2 assets
+cached modules 2.73 MiB (javascript) 27.5 KiB (runtime) [cached] 643 modules
+
+LOG from webpack.FileSystemInfo
+<w> Managed item /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script isn't a directory or doesn't contain a package.json (see snapshot.managedPaths option)
++ 13 hidden lines
+
+ERROR in ./src/googleCalendar.js 1:0-35
+Module not found: Error: Can't resolve 'gapi-script' in '/home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src'
+resolve 'gapi-script' in '/home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src'
+  Parsed request is a module
+  using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    resolve as module
+      /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/src/node_modules doesn't exist or is not a directory
+      looking for modules in /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules
+        single file module
+          using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./node_modules/gapi-script)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script is not a file
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script.js doesn't exist
+            .jsx
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script.jsx doesn't exist
+        existing directory /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script
+          using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./node_modules/gapi-script)
+            using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./node_modules/gapi-script)
+              no extension
+                Field 'browser' doesn't contain a valid alias configuration
+                /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script is not a file
+              .js
+                Field 'browser' doesn't contain a valid alias configuration
+                /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script.js doesn't exist
+              .jsx
+                Field 'browser' doesn't contain a valid alias configuration
+                /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script.jsx doesn't exist
+              as directory
+                existing directory /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script
+                  using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./node_modules/gapi-script)
+                    using path: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script/index
+                      using description file: /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/package.json (relative path: ./node_modules/gapi-script/index)
+                        no extension
+                          Field 'browser' doesn't contain a valid alias configuration
+                          /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script/index doesn't exist
+                        .js
+                          Field 'browser' doesn't contain a valid alias configuration
+                          /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script/index.js doesn't exist
+                        .jsx
+                          Field 'browser' doesn't contain a valid alias configuration
+                          /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/financegoals_tracker/node_modules/gapi-script/index.jsx doesn't exist
+      /home/kavia/workspace/code-generation/financegoals-tracker-62369-19f74bb5/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/code-generation/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/node_modules doesn't exist or is not a directory
+      /home/kavia/node_modules doesn't exist or is not a directory
+      /home/node_modules doesn't exist or is not a directory
+      /node_modules doesn't exist or is not a directory
+ @ ./src/App.js 5:0-83 479:31-54 485:10-32
+ @ ./src/index.js 5:0-24 14:34-37
+
+webpack 5.99.9 compiled with 1 error in 91 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 3.11 MiB
+  asset bundle.js 3.05 MiB [emitted] (name: main)
+  asset main.931131d0f670387212a7.hot-update.js 58.9 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.931131d0f670387212a7.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 3.11 MiB = bundle.js 3.05 MiB main.931131d0f670387212a7.hot-update.js 58.9 KiB
+cached modules 2.73 MiB [cached] 628 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 53.3 KiB
+  ./src/googleCalendar.js 1.7 KiB [code generated]
+  ./node_modules/gapi-script/index.js 2.81 KiB [built] [code generated]
+  ./node_modules/gapi-script/gapiScript.js 48.8 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 174 ms
+Injecting EditorRootWrapper import: ../.ve/EditorRootWrapper
+assets by path *.js 3.05 MiB
+  asset bundle.js 3.05 MiB [emitted] (name: main)
+  asset main.509f1f5972e4f17fee76.hot-update.js 854 bytes [emitted] [immutable] [hmr] (name: main)
+asset index.html 1.98 KiB [emitted]
+asset main.509f1f5972e4f17fee76.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 3.05 MiB = bundle.js 3.05 MiB main.509f1f5972e4f17fee76.hot-update.js 854 bytes
+cached modules 2.72 MiB [cached] 623 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 60.8 KiB
+  modules by path ./src/*.js 48.7 KiB
+    ./src/index.js 702 bytes [built]
+    ./src/App.js 36.3 KiB [built]
+    ./src/GoogleAuthProvider.js 2.92 KiB [built]
+    ./src/PieChartGoalProgress.js 7.07 KiB [built]
+    ./src/googleCalendar.js 1.7 KiB [built]
+  modules by path ./.ve/ 12.2 KiB
+    ./.ve/EditorRootWrapper.js 2.68 KiB [built]
+    ./.ve/EditorOverlay.jsx 1.58 KiB [built]
+    ./.ve/SidePanel.js 7.93 KiB [built]
+webpack 5.99.9 compiled successfully in 372 ms
