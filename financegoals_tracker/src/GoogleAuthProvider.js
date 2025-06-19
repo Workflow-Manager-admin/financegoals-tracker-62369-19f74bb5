@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 const CLIENT_ID = "533987858905-v7lj69i6ctto8jioq7omiami9ks4nptb.apps.googleusercontent.com";
+// TODO: Review this CLIENT_ID for match with the Google Cloud Console configuration; see guidance below.
 const SCOPES = "https://www.googleapis.com/auth/calendar.events https://www.googleapis.com/auth/userinfo.profile openid email";
 const API_DISCOVERY = "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest";
 
