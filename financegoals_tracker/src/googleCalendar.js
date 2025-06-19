@@ -1,5 +1,3 @@
-import { gapi } from "gapi-script";
-
 /**
  * PUBLIC_INTERFACE
  * Adds an event to the Google user's primary calendar via gapi.
@@ -10,8 +8,8 @@ import { gapi } from "gapi-script";
  */
 export function addGoogleCalendarEvent(eventData, onSuccess, onError) {
   // gapi must be loaded and authorized
-  if (!window.gapi || !window.gapi.client) {
-    onError && onError("Google API not loaded.");
+  if (!window.gapi || !window.gapi.client || !window.gapi.client.calendar) {
+    if (typeof onError === "function") onError("Google API not loaded.");
     return;
   }
   window.gapi.client.calendar.events.insert({

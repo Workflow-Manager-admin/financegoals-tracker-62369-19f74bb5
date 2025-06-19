@@ -30,21 +30,25 @@ const API_DISCOVERY = "https://www.googleapis.com/discovery/v1/apis/calendar/v3/
  * Loads the Google API client library and initializes it.
  * Returns a Promise that resolves when gapi is ready.
  */
+/**
+ * Loads the gapi client *after* script tags present in HTML.
+ * Waits for gapi global, then loads client:auth2.
+ */
 function loadGapiClient() {
   return new Promise((resolve) => {
     if (window.gapi && window.gapi.auth2) {
       resolve();
       return;
     }
-    // load script tag for gapi
-    const script = document.createElement("script");
-    script.src = "https://apis.google.com/js/api.js";
-    script.onload = () => {
-      window.gapi.load("client:auth2", () => {
-        resolve();
-      });
-    };
-    document.body.appendChild(script);
+    // Wait until gapi is available (script tag may not be loaded instantly)
+    function waitForGapi() {
+      if (window.gapi && window.gapi.load) {
+        window.gapi.load("client:auth2", resolve);
+      } else {
+        setTimeout(waitForGapi, 50);
+      }
+    }
+    waitForGapi();
   });
 }
 
@@ -66,37 +70,58 @@ export function GoogleAuthProvider({ children }) {
 
   // Load gapi client & initialize
   useEffect(() => {
+    let isUnmounted = false;
     async function init() {
-      await loadGapiClient();
-      await window.gapi.client.init({
-        clientId: CLIENT_ID,
-        discoveryDocs: [API_DISCOVERY],
-        scope: SCOPES,
-      });
-      const authInstance = window.gapi.auth2.getAuthInstance();
-      setAuth(authInstance);
-      setGapiLoaded(true);
-      // Set user if already signed in
-      if (authInstance.isSignedIn.get()) {
-        setUser(authInstance.currentUser.get().getBasicProfile());
-      }
-      // Listen to changes
-      authInstance.isSignedIn.listen(signedIn => {
-        if (signedIn) {
-          setUser(authInstance.currentUser.get().getBasicProfile());
-        } else {
-          setUser(null);
+      try {
+        await loadGapiClient();
+        // Defensive: only initialize client if not already initialized
+        if (!window.gapi.client || !window.gapi.client.init) {
+          // Defensive check; possible gapi script loaded late
+          setTimeout(init, 80);
+          return;
         }
-      });
+        await window.gapi.client.init({
+          clientId: CLIENT_ID,
+          discoveryDocs: [API_DISCOVERY],
+          scope: SCOPES,
+        });
+        const authInstance = window.gapi.auth2.getAuthInstance();
+        if (isUnmounted) return;
+        setAuth(authInstance);
+        setGapiLoaded(true);
+        // Set user if already signed in
+        if (authInstance.isSignedIn.get()) {
+          setUser(authInstance.currentUser.get().getBasicProfile());
+        }
+        // Listen to sign-in state changes
+        authInstance.isSignedIn.listen(signedIn => {
+          if (signedIn) {
+            setUser(authInstance.currentUser.get().getBasicProfile());
+          } else {
+            setUser(null);
+          }
+        });
+      } catch (err) {
+        // Could log: initialization or client load failure
+        setGapiLoaded(false);
+        setAuth(null);
+      }
     }
     init();
+    return () => {
+      isUnmounted = true;
+    };
   }, []);
 
   // PUBLIC_INTERFACE
   const signIn = async () => {
     if (!auth) return;
-    await auth.signIn();
-    setUser(auth.currentUser.get().getBasicProfile());
+    try {
+      await auth.signIn();
+      setUser(auth.currentUser.get().getBasicProfile());
+    } catch (err) {
+      // Optionally, alert or log error
+    }
   };
 
   // PUBLIC_INTERFACE
@@ -106,6 +131,7 @@ export function GoogleAuthProvider({ children }) {
     setUser(null);
   };
 
+  // PUBLIC_INTERFACE
   const getAuthToken = () => {
     if (!auth) return "";
     const userObj = auth.currentUser.get();
